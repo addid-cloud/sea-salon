@@ -1,6 +1,7 @@
     "use client"
     import { useState } from 'react';
     import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
     const slides = [
     {
@@ -66,7 +67,7 @@
     const imageIndex = ((page % slides.length) + slides.length) % slides.length;
 
     return (
-        <div className="bg-[url('/image/servicebg.png')] relative bg-cover bg-no-repeat w-full h-screen overflow-x-hidden flex items-center justify-center flex-col">
+        <div className="bg-[url('/image/servicebg.png')] relative bg-cover bg-no-repeat w-full h-screen overflow-x-hidden flex items-center justify-center flex-col bg-black">
             <h1 className='text-white self-start text-4xl ml-9 '>Service</h1>
             <div className='bg-white w-40 h-2 self-start ml-9'/>
     <div className="relative w-1/2 h-4/5   overflow-hidden bg-black rounded ">
@@ -116,7 +117,7 @@
             </motion.div>
             <h3 className='absolute bottom-3 left-11'>{slides[imageIndex].nomer} / 03</h3>
         </AnimatePresence>
-        <button className="mt-4 px-4 py-2 bg-gray-700 text-white rounded">Register</button>
+        <Link href={"/register"}><button className="mt-4 px-4 py-2 bg-gray-700 text-white rounded">Register</button></Link>
         <img src="/image/logo.svg" alt="logo" className='absolute w-16 right-4 bottom-4' />
         </div>
     </div>

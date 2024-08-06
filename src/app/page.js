@@ -13,7 +13,7 @@ export default function Home() {
     <HeroSection/>
     <About/>
     <Service/>
-    <Comments/>
+    <Comments buttonLink={false}/>
     <End/>
     </>
   );

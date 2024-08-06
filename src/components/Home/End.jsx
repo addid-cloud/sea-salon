@@ -4,7 +4,7 @@ import React from 'react'
 
 const End = () => {
   return (
-    <div>
+    <div className='mt-12'>
         <h1 className='text-8xl'>YOU CAN'T SCROLL ANYMORE.</h1>
         <h1 className='text-8xl'>BETTER CONTACT US,</h1>
         <div className='flex flex-row '>

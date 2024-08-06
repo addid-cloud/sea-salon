@@ -2,11 +2,11 @@ import { Footprints, Star } from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 import React from 'react'
 
-const Comments = () => {
+const Comments = ({buttonLink}) => {
   return (
     <div>
     <div className='flex flex-col items-center'>
-      <img src="/image/SE.png" className='absolute w-24 right-4' alt="" />
+      {buttonLink ? null : (<img src="/image/SE.png" className='absolute w-24 right-4' alt="" />)}
       <h2 className='text-4xl font-semibold pt-4 '>Public Figure Said </h2>
       <div className='bg-black w-72 h-2'/>
     </div>
@@ -51,9 +51,12 @@ const Comments = () => {
       </div>
       </div>
     </div>
-      <div>
-        <Link href={"/komentar"}><button className='bg-black text-white p-10 text-center'>Leave a Trace <Footprints className='text-center w-full' weight='fill'/></button> </Link>
-      </div>
+    {buttonLink ? null :(
+            <div>
+            <Link href={"/komentar"}><button className='bg-black text-white p-10 text-center'>Leave a Trace <Footprints className='text-center w-full' weight='fill'/></button> </Link>
+          </div>
+    )}
+
     </div>
   )
 }

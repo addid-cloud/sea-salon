@@ -1,0 +1,32 @@
+    // schema.prisma
+
+    generator client {
+    provider = "prisma-client-js"
+    }
+
+    datasource db {
+    provider = "postgresql"
+    url = env("POSTGRES_PRISMA_URL") 
+    directUrl = env("POSTGRES_URL_NON_POOLING") 
+    }
+
+    model Comment {
+    id        Int      @id @default(autoincrement())
+    username  String
+    text      String
+    createdAt DateTime @default(now())
+    }
+
+    model Reservation {
+    id        Int      @id @default(autoincrement())
+    name      String
+    service   Service
+    date      DateTime
+    time      String
+    }
+
+    enum Service {
+    SERVICE_1
+    SERVICE_2
+    SERVICE_3
+    }
